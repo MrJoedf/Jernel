@@ -15,14 +15,21 @@
 .Login {
     text-align: center;
 
-    padding-top: 4%;
+    padding-top: 2.1%;
 
+    p {
+      color:rgb(255, 254, 254);
+      margin-top: 5%;
+      margin-bottom: 5%;
+    }
 
-    .group 			  { 
+    .group{ 
       position:relative; 
       margin-bottom:45px; 
       margin-left: 20%;
     }
+
+
     input 				{
       font-size:18px;
       padding:10px 10px 10px 5px;
@@ -37,6 +44,7 @@
 
       color: white;
     }
+
     input:focus 		{ outline:none; }
     
     /* LABEL ======================================= */
@@ -126,45 +134,66 @@
       
      //glass effect stuff
       margin-left: 32%;
-      background: rgba(200, 200, 200, 0.25);
-      box-shadow: 0 8px 32px 0 rgba(231, 231, 233, 0.071);
+      background: rgba(200, 200, 200, 0.16);
+      box-shadow: 0 8px 32px 0 rgba(231, 231, 233, 0.036);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border-radius: 10px;
-      border: 1px solid rgba(210, 196, 196, 0.18);
-
-     
+      border-radius: 90px;
+      border: 1px solid rgba(210, 196, 196, 0.091);
+      border-width: 5px;
 
       //Jernel app logo image
       .appLogo{
         padding-top: 0%;
         max-width:50%;
-        padding-bottom: 4%;
+        padding-bottom: 5%;
       }
 
       .signInSpan{
         margin-left: 1%;
+       
         color: rgb(220, 215, 215);
+        
 
         &:hover{
           color: rgb(255, 255, 255);
           cursor: pointer;
         }
       }
-
-
-
-      /*input{
-        background: rgba(232, 225, 225, 0.728);
-        color: white;
-        padding-top:1%;
-       
-        
-      }*/
-
-      button{
+//---BUTTON STYLING---//
+      button{ //ignore for now
         
       }
+
+      .glassButton{
+          
+          padding: 24px 32px;
+
+          height: 60px;
+
+          text-decoration:whitesmoke;
+          border-radius: 32px;
+
+          background-color: rgba(255,255,255,0.1);
+          border: 1px solid rgba(255,255,255,0.1);
+
+          backdrop-filter: blur(30px);
+          color: rgba(255,255,255,0.8);
+
+          font-size: 14px;
+          letter-spacing: 2px;
+
+          cursor: pointer;
+          text-transform: uppercase;
+        }
+        
+        .glassButton:hover {
+          background-color: rgba(255,255,255,0.2);
+        }
+      }
+
+
+
 
     }
 
@@ -172,7 +201,7 @@
 
   
   
-}
+
 
 
 

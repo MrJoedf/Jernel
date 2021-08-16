@@ -11,7 +11,7 @@ function App() {
     const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
-    const [hasAccount, setHasAccount] = useState(false);
+    const [hasAccount, setHasAccount] = useState(true);
     const [userID, setUserID] = useState('');
 
     function clearInputs(){
@@ -35,6 +35,7 @@ function App() {
     function handleSignup(){
 
     }
+
 
     
 

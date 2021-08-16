@@ -64,16 +64,17 @@ function Login(PropObjs : PropObjects){
                     {PropObjs.hasAccount ? (
                         //if has account, sign in
                         <>
-                        <button onClick={() => PropObjs.handleLogin}>Sign In</button>
-                        <p>Don't have an account? 
-                            <span className="signUpSpan" onClick={() => PropObjs.setHasAccount}>Sign Up</span></p>
+                        <button className="glassButton" onClick={() => PropObjs.handleLogin}>Sign In</button>
+                        <p className="haveAccount">Don't have an account?
+                            <span className="signInSpan" onClick={() => PropObjs.setHasAccount(false)}>Sign Up</span>
+                        </p>
                         </>
                     ) : (
                         //if doesn't have account, sign up
                         <>
-                        <button onClick={()=>PropObjs.handleSignup}>Sign Up</button>
+                        <button className="glassButton" onClick={()=>PropObjs.handleSignup}>Sign Up</button>
                         <p>Have an account? 
-                            <span className="signInSpan" onClick={() => PropObjs.setHasAccount}>Sign In</span></p>
+                            <span className="signInSpan" onClick={() => PropObjs.setHasAccount(true)}>Sign In</span></p>
                         </>
                     )}
                 </div>
