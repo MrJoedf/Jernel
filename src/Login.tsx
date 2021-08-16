@@ -41,13 +41,23 @@ function Login(PropObjs : PropObjects){
                     <img className="appLogo" src={appLogo}/>
                 </div>
                
-                <label>Email</label>
-                <input className="email" type="text" onClick ={() => PropObjs.clearErrors} autoFocus required value={PropObjs.email} onChange={(e) => PropObjs.setEmail(e.target.value)} />
-                
-                <p className="errorMsg">{PropObjs.emailError}</p>
-                <label>Pass  </label>
+            
 
-                <input className="password" type="password" required value = {PropObjs.password} onChange={(e) => PropObjs.setPassword(e.target.value)} />
+                <div className="group">      
+                    <input type="text" required/>
+                    <span className="highlight"/>
+                    <span className="bar"/>
+                    <label>Email</label>
+                </div>
+
+                <div className="group">      
+                    <input type="text" required/>
+                    <span className="highlight"/>
+                    <span className="bar"/>
+                    <label>Password</label>
+                </div>
+
+
 
                 <p className="errorMsg">{PropObjs.passwordError}</p>
 
