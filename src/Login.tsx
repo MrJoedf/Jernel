@@ -2,11 +2,14 @@ import React, {useState, useEffect, Dispatch, SetStateAction} from 'react';
 import './App.scss';
 import appLogo from "./Jernel_Logo.png";
 
+//---DEFINING THE TYPES FOR THE PROP FUNCTIONS---//
 type PropFunctionBool = Dispatch<SetStateAction<boolean>>;
 type PropFunctionString = Dispatch<SetStateAction<string>>;
 
 type PropFunction = () => void;
 
+
+//---DEFINING THE PROP OBJECTS---//
 interface PropObjects {
     email: string;
     password: string;
@@ -32,7 +35,7 @@ interface PropObjects {
 }
 
 
-function Login(PropObjs : PropObjects){
+export default function Login (PropObjs : PropObjects){
  
     return( 
         <section className="Login">
@@ -83,4 +86,4 @@ function Login(PropObjs : PropObjects){
     )
 }
 
-export default Login;
+
