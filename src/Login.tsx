@@ -2,8 +2,8 @@ import React, {useState, useEffect, Dispatch, SetStateAction} from 'react';
 import './App.scss';
 import appLogo from "./Jernel_Logo.png";
 
-type PropFunctionBool =Dispatch<SetStateAction<boolean>>;
-type PropFunctionString =Dispatch<SetStateAction<string>>;
+type PropFunctionBool = Dispatch<SetStateAction<boolean>>;
+type PropFunctionString = Dispatch<SetStateAction<string>>;
 
 type PropFunction = () => void;
 
@@ -41,13 +41,22 @@ function Login(PropObjs : PropObjects){
                     <img className="appLogo" src={appLogo}/>
                 </div>
                
-                <label>Email</label>
-                <input className="email" type="text" onClick ={() => PropObjs.clearErrors} autoFocus required value={PropObjs.email} onChange={(e) => PropObjs.setEmail(e.target.value)} />
-                
-                <p className="errorMsg">{PropObjs.emailError}</p>
-                <label>Pass  </label>
 
-                <input className="password" type="password" required value = {PropObjs.password} onChange={(e) => PropObjs.setPassword(e.target.value)} />
+                <div className="group">      
+                    <input type="text" required/>
+                    <span className="highlight"/>
+                    <span className="bar"/>
+                    <label>Email</label>
+                </div>
+
+                <div className="group">      
+                    <input type="password" required/>
+                    <span className="highlight"/>
+                    <span className="bar"/>
+                    <label>Password</label>
+                </div>
+
+
 
                 <p className="errorMsg">{PropObjs.passwordError}</p>
 
@@ -55,16 +64,17 @@ function Login(PropObjs : PropObjects){
                     {PropObjs.hasAccount ? (
                         //if has account, sign in
                         <>
-                        <button onClick={() => PropObjs.handleLogin}>Sign In</button>
-                        <p>Don't have an account? 
-                            <span className="signUpSpan" onClick={() => PropObjs.setHasAccount}>Sign Up</span></p>
+                        <button className="glassButton" onClick={() => PropObjs.handleLogin}>Sign In</button>
+                        <p className="haveAccount">Don't have an account?
+                            <span className="signInSpan" onClick={() => PropObjs.setHasAccount(false)}>Sign Up</span>
+                        </p>
                         </>
                     ) : (
                         //if doesn't have account, sign up
                         <>
-                        <button onClick={()=>PropObjs.handleSignup}>Sign Up</button>
+                        <button className="glassButton" onClick={()=>PropObjs.handleSignup}>Sign Up</button>
                         <p>Have an account? 
-                            <span className="signInSpan" onClick={() => PropObjs.setHasAccount}>Sign In</span></p>
+                            <span className="signInSpan" onClick={() => PropObjs.setHasAccount(true)}>Sign In</span></p>
                         </>
                     )}
                 </div>
