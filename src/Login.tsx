@@ -2,8 +2,8 @@ import React, {useState, useEffect, Dispatch, SetStateAction} from 'react';
 import './App.scss';
 import appLogo from "./Jernel_Logo.png";
 
-type PropFunctionBool =Dispatch<SetStateAction<boolean>>;
-type PropFunctionString =Dispatch<SetStateAction<string>>;
+type PropFunctionBool = Dispatch<SetStateAction<boolean>>;
+type PropFunctionString = Dispatch<SetStateAction<string>>;
 
 type PropFunction = () => void;
 
@@ -41,7 +41,6 @@ function Login(PropObjs : PropObjects){
                     <img className="appLogo" src={appLogo}/>
                 </div>
                
-            
 
                 <div className="group">      
                     <input type="text" required/>
@@ -51,7 +50,7 @@ function Login(PropObjs : PropObjects){
                 </div>
 
                 <div className="group">      
-                    <input type="text" required/>
+                    <input type="password" required/>
                     <span className="highlight"/>
                     <span className="bar"/>
                     <label>Password</label>
