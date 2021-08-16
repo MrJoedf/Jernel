@@ -1,0 +1,108 @@
+.App {
+  min-height: 100vh;
+  padding: 0 20px;
+  text-align: left;
+
+  background-image: url("dark-mountains.jpeg");
+  background-size: cover;
+  
+  //main/Hero style sheet
+  .Main {
+  
+  }
+
+  //login style sheet
+.Login {
+    text-align: center;
+
+   
+
+    .loginContainer{
+     
+      padding-top: 3%;
+      width: 25%;
+      min-height: 60vh;
+      
+     //glass effect stuff
+      margin-left: 35%;
+      background: rgba(200, 200, 200, 0.25);
+      box-shadow: 0 8px 32px 0 rgba(231, 231, 233, 0.071);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 10px;
+      border: 1px solid rgba(210, 196, 196, 0.18);
+
+     
+
+      //Jernel app logo image
+      .appLogo{
+        padding-top: 0%;
+        max-width:50%;
+        padding-bottom: 4%;
+      }
+
+      .signInSpan{
+
+        &:hover{
+          color: blue;
+          cursor: pointer;
+        }
+      }
+
+
+
+      input{
+        background: rgba(232, 225, 225, 0.728);
+        color: white;
+        padding-top:1%;
+      }
+
+      button{
+        
+      }
+
+    }
+
+  }
+
+  
+  
+}
+
+
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
