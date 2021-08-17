@@ -31,7 +31,6 @@ interface PropObjects {
     setEmail: PropFunctionString; 
     setPassword: PropFunctionString;
    
-
 }
 
 
@@ -43,7 +42,7 @@ export default function Login (PropObjs : PropObjects){
                 <div className="logoImg">
                     <img className="appLogo" src={appLogo}/>
                 </div>
-               
+
 
                 <div className="group">      
                     <input type="text" required/>
@@ -52,6 +51,8 @@ export default function Login (PropObjs : PropObjects){
                     <label>Email</label>
                 </div>
 
+                <p className="errorMsg">{PropObjs.passwordError}</p>
+
                 <div className="group">      
                     <input type="password" required/>
                     <span className="highlight"/>
@@ -59,10 +60,7 @@ export default function Login (PropObjs : PropObjects){
                     <label>Password</label>
                 </div>
 
-
-
-                <p className="errorMsg">{PropObjs.passwordError}</p>
-
+               
                 <div className="btnContainer">
                     {PropObjs.hasAccount ? (
                         //if has account, sign in

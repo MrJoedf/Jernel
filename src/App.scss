@@ -17,7 +17,7 @@
 .Login {
     text-align: center;
 
-    padding-top: 2.1%;
+    padding-top: 1.6%;
 
     p {
       color:rgb(255, 254, 254);
@@ -37,7 +37,7 @@
       padding:10px 10px 10px 5px;
 
       display:block;
-      width:300px;
+      width:67%;
 
       border:none;
       border-bottom:1px solid #757575;
@@ -155,11 +155,11 @@
       .signInSpan{
         margin-left: 1%;
        
-        color: rgb(220, 215, 215);
+        color: rgb(255, 255, 255);
         
 
         &:hover{
-          color: rgb(255, 255, 255);
+          color: rgba(255, 255, 255, 0.468);
           cursor: pointer;
         }
       }
@@ -171,16 +171,17 @@
       .glassButton{
           
           padding: 24px 32px;
+          margin-bottom: 2%;
 
           height: 60px;
 
           text-decoration:whitesmoke;
           border-radius: 32px;
 
-          background-color: rgba(255,255,255,0.1);
+          background-color: rgba(255, 255, 255, 0.119);
           border: 1px solid rgba(255,255,255,0.1);
 
-          backdrop-filter: blur(30px);
+          backdrop-filter: blur(10px);
           color: rgba(255,255,255,0.8);
 
           font-size: 14px;
@@ -191,7 +192,7 @@
         }
         
         .glassButton:hover {
-          background-color: rgba(255,255,255,0.2);
+          background-color: rgba(255, 255, 255, 0.255);
         }
       }
     }
@@ -233,3 +234,6 @@
     transform: rotate(360deg);
   }
 }
+
+
+
