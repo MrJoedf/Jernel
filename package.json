@@ -12,6 +12,7 @@
     "@types/react-dom": "^17.0.9",
     "@types/react-router": "^5.1.16",
     "bcryptjs": "^2.4.3",
+    "firebase": "^8.9.1",
     "mongosh": "^1.0.4",
     "node-sass": "^6.0.1",
     "react": "^17.0.2",

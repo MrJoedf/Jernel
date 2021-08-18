@@ -2,11 +2,14 @@ import React, {useState, useEffect, Dispatch, SetStateAction} from 'react';
 import './App.scss';
 import appLogo from "./Jernel_Logo.png";
 
+//---DEFINING THE TYPES FOR THE PROP FUNCTIONS---//
 type PropFunctionBool = Dispatch<SetStateAction<boolean>>;
 type PropFunctionString = Dispatch<SetStateAction<string>>;
 
 type PropFunction = () => void;
 
+
+//---DEFINING THE PROP OBJECTS---//
 interface PropObjects {
     email: string;
     password: string;
@@ -28,11 +31,10 @@ interface PropObjects {
     setEmail: PropFunctionString; 
     setPassword: PropFunctionString;
    
-
 }
 
 
-function Login(PropObjs : PropObjects){
+export default function Login (PropObjs : PropObjects){
  
     return( 
         <section className="Login">
@@ -40,7 +42,7 @@ function Login(PropObjs : PropObjects){
                 <div className="logoImg">
                     <img className="appLogo" src={appLogo}/>
                 </div>
-               
+
 
                 <div className="group">      
                     <input type="text" required/>
@@ -49,6 +51,8 @@ function Login(PropObjs : PropObjects){
                     <label>Email</label>
                 </div>
 
+                <p className="errorMsg">{PropObjs.passwordError}</p>
+
                 <div className="group">      
                     <input type="password" required/>
                     <span className="highlight"/>
@@ -56,10 +60,7 @@ function Login(PropObjs : PropObjects){
                     <label>Password</label>
                 </div>
 
-
-
-                <p className="errorMsg">{PropObjs.passwordError}</p>
-
+               
                 <div className="btnContainer">
                     {PropObjs.hasAccount ? (
                         //if has account, sign in
@@ -83,4 +84,4 @@ function Login(PropObjs : PropObjects){
     )
 }
 
-export default Login;
+
