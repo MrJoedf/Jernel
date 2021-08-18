@@ -24,6 +24,8 @@ export default function App() {
       setPasswordError('');
     }
 
+
+    //---FIREBASE AUTHENTICATION FUNCTIONS---//
     function handleLogin(){
       clearErrors();
       fireBase
@@ -67,7 +69,9 @@ export default function App() {
                 break;
             }
           });
-      }    
+      }   
+      
+      //---END FIREBASE AUTHENTICATION FUNCTIONS---//
 
       return (
       <div className="App">
