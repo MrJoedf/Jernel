@@ -6,7 +6,7 @@ import appLogo from "./Jernel_Logo.png";
 type PropFunctionBool = Dispatch<SetStateAction<boolean>>;
 type PropFunctionString = Dispatch<SetStateAction<string>>;
 
-type PropFunction = () => void;
+type PropFunction  = Dispatch<SetStateAction<void>>;
 
 
 //---DEFINING THE PROP OBJECTS---//
@@ -44,20 +44,23 @@ export default function Login (PropObjs : PropObjects){
                 </div>
 
 
+                <p className="errorMsg">{PropObjs.emailError}</p>
+
                 <div className="group">      
-                    <input type="text" required/>
+                    <input type="text" required onClick ={()=>PropObjs.clearErrors()} onChange={(e) => PropObjs.setEmail(e.target.value)}/>
                     <span className="highlight"/>
                     <span className="bar"/>
                     <label>Email</label>
                 </div>
 
                 <p className="errorMsg">{PropObjs.passwordError}</p>
+                <div className="group">
 
-                <div className="group">      
-                    <input type="password" required/>
+                    <input type="password" required onClick={()=> PropObjs.clearErrors()} onChange={(e) => PropObjs.setPassword(e.target.value)}/>
                     <span className="highlight"/>
                     <span className="bar"/>
                     <label>Password</label>
+                    
                 </div>
 
                
@@ -65,7 +68,7 @@ export default function Login (PropObjs : PropObjects){
                     {PropObjs.hasAccount ? (
                         //if has account, sign in
                         <>
-                        <button className="glassButton" onClick={() => PropObjs.handleLogin}>Sign In</button>
+                        <button className="glassButton" onClick={() => PropObjs.handleLogin()}>Sign In</button>
                         <p className="haveAccount">Don't have an account?
                             <span className="signInSpan" onClick={() => PropObjs.setHasAccount(false)}>Sign Up</span>
                         </p>
@@ -73,7 +76,7 @@ export default function Login (PropObjs : PropObjects){
                     ) : (
                         //if doesn't have account, sign up
                         <>
-                        <button className="glassButton" onClick={()=>PropObjs.handleSignup}>Sign Up</button>
+                        <button className="glassButton" onClick={()=>PropObjs.handleSignup()}>Sign Up</button>
                         <p>Have an account? 
                             <span className="signInSpan" onClick={() => PropObjs.setHasAccount(true)}>Sign In</span></p>
                         </>

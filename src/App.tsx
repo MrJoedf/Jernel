@@ -27,24 +27,30 @@ export default function App() {
 
     //---FIREBASE AUTHENTICATION FUNCTIONS---//
     function handleLogin(){
+    
       clearErrors();
       fireBase
         .auth()
         .signInWithEmailAndPassword(email, password)
         .catch(err => {
-          switch(err.code){
+          switch(err.code){ 
             case "auth/invalid-email":
             case "auth/user-disabled":
             case "auth/user-not-found":
               setEmailError(err.message);
               clearInputs();
               break;
+            
             case "auth/wrong-password":
               setPasswordError(err.message);
               clearInputs();
               break;
+           
           }
-        });
+        }
+         
+        );
+       
     }
 
       function handleLogout(){
