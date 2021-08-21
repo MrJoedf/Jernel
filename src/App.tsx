@@ -6,7 +6,7 @@ import fireBase from './firebase';
 export default function App() {
     //user auth stuff
 
-    const [user, setUser] = useState('');
+    const [user, setUser] = useState<any>(null);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState('');
@@ -27,28 +27,36 @@ export default function App() {
 
     //---FIREBASE AUTHENTICATION FUNCTIONS---//
     function handleLogin(){
+    
       clearErrors();
       fireBase
         .auth()
         .signInWithEmailAndPassword(email, password)
         .catch(err => {
-          switch(err.code){
+          switch(err.code){ 
             case "auth/invalid-email":
             case "auth/user-disabled":
             case "auth/user-not-found":
               setEmailError(err.message);
               clearInputs();
               break;
+            
             case "auth/wrong-password":
               setPasswordError(err.message);
               clearInputs();
               break;
+           
           }
-        });
+        }
+         
+        );
+       
     }
 
       function handleLogout(){
         fireBase.auth().signOut();
+        window.location.reload();
+        
       }
 
       function handleSignup(){
@@ -70,6 +78,22 @@ export default function App() {
             }
           });
       }   
+      const authListener = () => {
+        fireBase.auth().onAuthStateChanged(user => {
+          if (user){
+            clearInputs();
+            setUser(user);
+           
+            setUserID(user.uid);
+          }
+         
+        });
+      };
+    
+      useEffect (() => {
+        authListener();
+       
+      }, [])
       
       //---END FIREBASE AUTHENTICATION FUNCTIONS---//
 
@@ -78,7 +102,11 @@ export default function App() {
       
         {user ? 
 
-            <Main/>
+            <Main
+              
+            handleLogout={handleLogout}
+            
+            />
 
             : 
 
@@ -95,7 +123,7 @@ export default function App() {
                 emailError={emailError}
                 passwordError={passwordError}
                 clearErrors={clearErrors}
-                user={user}
+                user={(user) ? user : ''}
                 setUser={setUser}
             
             />
