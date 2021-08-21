@@ -6,7 +6,7 @@ import fireBase from './firebase';
 export default function App() {
     //user auth stuff
 
-    const [user, setUser] = useState('');
+    const [user, setUser] = useState<any>(null);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState('');
@@ -55,6 +55,8 @@ export default function App() {
 
       function handleLogout(){
         fireBase.auth().signOut();
+        window.location.reload();
+        
       }
 
       function handleSignup(){
@@ -76,6 +78,22 @@ export default function App() {
             }
           });
       }   
+      const authListener = () => {
+        fireBase.auth().onAuthStateChanged(user => {
+          if (user){
+            clearInputs();
+            setUser(user);
+           
+            setUserID(user.uid);
+          }
+         
+        });
+      };
+    
+      useEffect (() => {
+        authListener();
+       
+      }, [])
       
       //---END FIREBASE AUTHENTICATION FUNCTIONS---//
 
@@ -84,7 +102,11 @@ export default function App() {
       
         {user ? 
 
-            <Main/>
+            <Main
+              
+            handleLogout={handleLogout}
+            
+            />
 
             : 
 
@@ -101,7 +123,7 @@ export default function App() {
                 emailError={emailError}
                 passwordError={passwordError}
                 clearErrors={clearErrors}
-                user={user}
+                user={(user) ? user : ''}
                 setUser={setUser}
             
             />

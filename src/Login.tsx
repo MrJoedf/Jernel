@@ -6,6 +6,7 @@ import appLogo from "./Jernel_Logo.png";
 type PropFunctionBool = Dispatch<SetStateAction<boolean>>;
 type PropFunctionString = Dispatch<SetStateAction<string>>;
 
+
 type PropFunction  = Dispatch<SetStateAction<void>>;
 
 
