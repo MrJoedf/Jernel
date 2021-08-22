@@ -38,13 +38,13 @@ export default function App() {
             case "auth/user-disabled":
             case "auth/user-not-found":
               setEmailError(err.message);
-              clearInputs();
-              break;
             
+             
+              break;
             case "auth/wrong-password":
               setPasswordError(err.message);
-              clearInputs();
-              break;
+              
+             
            
           }
         }
@@ -69,11 +69,11 @@ export default function App() {
               case "auth/email-already-in-use":
               case "auth/invalid-email":
                 setEmailError(err.message);
-                clearInputs();
+               // clearInputs();
                 break;
               case "auth/weak-password":
                 setPasswordError(err.message);
-                clearInputs();
+               // clearInputs();
                 break;
             }
           });

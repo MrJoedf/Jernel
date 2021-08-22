@@ -1,4 +1,5 @@
 import React, {useState, useEffect, Dispatch, SetStateAction} from 'react';
+import { findAllInRenderedTree } from 'react-dom/test-utils';
 import './App.scss';
 import appLogo from "./Jernel_Logo.png";
 
@@ -35,6 +36,7 @@ interface PropObjects {
 }
 
 
+
 export default function Login (PropObjs : PropObjects){
  
     return( 
@@ -48,7 +50,13 @@ export default function Login (PropObjs : PropObjects){
                 <p className="errorMsg">{PropObjs.emailError}</p>
 
                 <div className="group">      
-                    <input type="text" required onClick ={()=>PropObjs.clearErrors()} onChange={(e) => PropObjs.setEmail(e.target.value)}/>
+                    <input 
+                        type="text" required 
+                        onClick ={()=>PropObjs.clearErrors()} 
+                        onChange={(e) => PropObjs.setEmail(e.target.value)}
+                        
+                    />
+
                     <span className="highlight"/>
                     <span className="bar"/>
                     <label>Email</label>
@@ -56,8 +64,11 @@ export default function Login (PropObjs : PropObjects){
 
                 <p className="errorMsg">{PropObjs.passwordError}</p>
                 <div className="group">
+                    <input type="password" required 
+                        onClick={()=> PropObjs.clearErrors()} 
+                        onChange={(e) => PropObjs.setPassword(e.target.value)}
+                    />
 
-                    <input type="password" required onClick={()=> PropObjs.clearErrors()} onChange={(e) => PropObjs.setPassword(e.target.value)}/>
                     <span className="highlight"/>
                     <span className="bar"/>
                     <label>Password</label>
