@@ -102,10 +102,9 @@ export default function App() {
       
         {user ? 
 
-            <Main
-              
-            handleLogout={handleLogout}
-            
+            <Main  
+              handleLogout={handleLogout}
+              userID={userID}
             />
 
             : 
@@ -123,7 +122,7 @@ export default function App() {
                 emailError={emailError}
                 passwordError={passwordError}
                 clearErrors={clearErrors}
-                user={(user) ? user : ''}
+                user={user}
                 setUser={setUser}
             
             />

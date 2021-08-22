@@ -7,6 +7,7 @@ type PropFunction  = Dispatch<SetStateAction<void>>;
 
 interface PropObjects{
     handleLogout: PropFunction;
+    userID: string;
 }
 
 export default function Main(PropObjs : PropObjects){
