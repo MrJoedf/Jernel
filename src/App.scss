@@ -46,6 +46,7 @@
   }
 }
 
+
 .App {
   min-height: 100vh;
   padding: 0 20px;
@@ -58,6 +59,7 @@
   
     h2{
       color: white;
+      margin-top: 0;
     }
   
 
@@ -131,7 +133,7 @@
     }
     
     /* BOTTOM BARS ================================= */
-    .bar 	{ position:relative; display:block; width:300px; }
+    .bar 	{ position:relative; display:block; width: 72%; }
 
     .bar:before, .bar:after 	{
       content:'';
@@ -146,6 +148,7 @@
     }
     .bar:before {
       left:50%;
+     
     }
     .bar:after {
       right:50%; 
@@ -160,7 +163,7 @@
     .highlight {
       position:absolute;
       height:60%; 
-      width:100px; 
+      width:50%; 
       top:25%; 
       left:0;
       pointer-events:none;
@@ -176,7 +179,7 @@
     
     /* ANIMATIONS ================ */
     @-webkit-keyframes inputHighlighter {
-      from { background:#fcfcfc38; }
+      from { background:#c9d4ff; }
       to 	{ width:0; background:transparent; }
     }
     @-moz-keyframes inputHighlighter {
@@ -184,7 +187,7 @@
       to 	{ width:0; background:transparent; }
     }
     @keyframes inputHighlighter {
-      from { background:#f7f7f75b; }
+      from { background:#c9d4ff; }
       to 	{ width:0; background:transparent; }
     }
 
@@ -192,13 +195,13 @@
     .loginContainer{
      
       padding-top: 0%;
-      width: 33%;
+      width: 30%;
 
       min-height: 72vh;
    
       
      //glass effect stuff
-      margin-left: 34%;
+      margin-left: 36%;
       background: rgba(200, 200, 200, 0.16);
       box-shadow: 0 8px 32px 0 rgba(231, 231, 233, 0.036);
       backdrop-filter: blur(20px);
@@ -210,8 +213,10 @@
       //Jernel app logo image
       .appLogo{
         padding-top: 0%;
-        max-width:50%;
-        padding-bottom: 2%;
+        width: 50%;
+        max-width: 55%;
+        padding-bottom: 1%;
+        margin-left: 0.5%;
       }
 
       .signInSpan{
