@@ -1,6 +1,8 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Note
+This project uses Google Firebase. To run the app locally, you must create a Firebase project and use its API key (in a file best named "firebase.tsx").
+This is due to the fact that the app has not yet been deployed for public use and the API key is not to be available to the public due to security reasons.
 
 ## Available Scripts
 
@@ -44,3 +46,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
