@@ -69,6 +69,7 @@ export default function Login (PropObjs : PropObjects){
                         onClick={()=> PropObjs.clearErrors()} 
                         onChange={(e) => PropObjs.setPassword(e.target.value)}
                         onKeyPress={e => {
+                            
                             if (e.key === 'Enter') {
                                {PropObjs.hasAccount ?
                                     PropObjs.handleLogin()
