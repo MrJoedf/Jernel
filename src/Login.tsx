@@ -1,3 +1,4 @@
+import { Console } from 'console';
 import React, {useState, useEffect, Dispatch, SetStateAction} from 'react';
 import { findAllInRenderedTree } from 'react-dom/test-utils';
 import './App.scss';
@@ -67,6 +68,17 @@ export default function Login (PropObjs : PropObjects){
                     <input type="password" required 
                         onClick={()=> PropObjs.clearErrors()} 
                         onChange={(e) => PropObjs.setPassword(e.target.value)}
+                        onKeyPress={e => {
+                            
+                            if (e.key === 'Enter') {
+                               {PropObjs.hasAccount ?
+                                    PropObjs.handleLogin()
+                                    :
+                                    PropObjs.handleSignup();
+                                }
+                            }
+                        }
+                    }   
                     />
 
                     <span className="highlight"/>
