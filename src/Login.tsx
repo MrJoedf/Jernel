@@ -1,6 +1,5 @@
 import { Console } from 'console';
 import React, {useState, useEffect, Dispatch, SetStateAction} from 'react';
-import { findAllInRenderedTree } from 'react-dom/test-utils';
 import './App.scss';
 import appLogo from "./Jernel_Logo.png";
 

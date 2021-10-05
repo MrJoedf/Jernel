@@ -18,10 +18,12 @@ interface PropObjects{
 export default function Main(PropObjs : PropObjects){
     return(
         <div className="main"> 
-            <h2>This is main.</h2>
-            <button 
+            
+            <button className="glassButton"
                 onClick={()=>PropObjs.handleLogout()}>Log out
             </button>
+            
+            <h2>This is main.</h2>
         </div>
        
     )

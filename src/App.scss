@@ -197,7 +197,7 @@
       padding-top: 0%;
       width: 30%;
 
-      min-height: 72vh;
+      min-height: 84vh;
    
       
      //glass effect stuff
@@ -220,7 +220,7 @@
       }
 
       .signInSpan{
-        margin-left: 1%;
+        margin-left: 2%;
        
         color: rgb(255, 255, 255);
         
@@ -231,40 +231,43 @@
         }
       }
 //---BUTTON STYLING---//
+.glassButton{
+          
+  padding: 24px 32px;
+  margin-bottom: 2%;
+
+  height: 60px;
+
+  text-decoration:whitesmoke;
+  border-radius: 32px;
+
+  background-color: rgba(255, 255, 255, 0.119);
+  border: 1px solid rgba(255,255,255,0.1);
+
+  backdrop-filter: blur(10px);
+  color: rgba(255,255,255,0.8);
+
+  font-size: 14px;
+  letter-spacing: 2px;
+
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.glassButton:hover {
+  background-color: rgba(255, 255, 255, 0.255);
+}
       button{ //ignore for now
         
       }
 
-      .glassButton{
-          
-          padding: 24px 32px;
-          margin-bottom: 2%;
-
-          height: 60px;
-
-          text-decoration:whitesmoke;
-          border-radius: 32px;
-
-          background-color: rgba(255, 255, 255, 0.119);
-          border: 1px solid rgba(255,255,255,0.1);
-
-          backdrop-filter: blur(10px);
-          color: rgba(255,255,255,0.8);
-
-          font-size: 14px;
-          letter-spacing: 2px;
-
-          cursor: pointer;
-          text-transform: uppercase;
-        }
-        
-        .glassButton:hover {
-          background-color: rgba(255, 255, 255, 0.255);
-        }
+      
       }
     }
 
   }
+
+  
 
 
 .App-logo {
