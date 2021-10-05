@@ -55,8 +55,7 @@ export default function App() {
 
       function handleLogout(){
         fireBase.auth().signOut();
-        window.location.reload();
-        
+        window.location.reload(); 
       }
 
       function handleSignup(){
